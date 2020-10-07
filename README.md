@@ -1,0 +1,2 @@
+# typescript
+For typescript studies.
