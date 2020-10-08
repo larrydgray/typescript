@@ -1,15 +1,30 @@
 let hatPrice = 100;
 console.log(`Hat price: ${hatPrice}`);
-let bootPrice = "100";
-console.log(`Boot Price: ${bootPrice}`);
+let bootsPrice = "100";
+console.log(`Boot Price: ${bootsPrice}`);
 
-if(hatPrice === bootPrice){
+function sumPrices(first, second, third){
+    return first+second+third;
+}
+
+
+let totalPrice = sumPrices(hatPrice, bootsPrice);
+console.log(`Total Price: ${totalPrice} ${typeof totalPrice}`);
+
+totalPrice = sumPrices(100, 200, 300);
+console.log(`Total Price: ${totalPrice} ${typeof totalPrice}`);
+
+totalPrice = sumPrices(100, 200);
+console.log(`Total Price: ${totalPrice} ${typeof totalPrice}`);
+
+
+if(hatPrice === bootsPrice){
     console.log("Prices are the same");
 } else {
     console.log("Prices are different");
 }
 
-let totalPrice = Number(hatPrice) + Number(bootPrice);
+totalPrice = Number(hatPrice) + Number(bootsPrice);
 console.log(`Total Price: ${totalPrice}`);
 
 let myVariable= "Adam";
