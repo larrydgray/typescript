@@ -3,7 +3,7 @@ console.log(`Hat price: ${hatPrice}`);
 let bootsPrice = "100";
 console.log(`Boot Price: ${bootsPrice}`);
 
-function sumPrices(first, second, third){
+function sumPrices(first, second, third=0){
     return first+second+third;
 }
 
