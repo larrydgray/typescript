@@ -4,9 +4,8 @@ let bootsPrice = "100";
 console.log(`Boot Price: ${bootsPrice}`);
 
 function sumPrices(...numbers){
-    return numbers.reduce(function (total, val) {
-        return total+(Number.isNaN(Number(val))?0:Number(val));
-    }, 0);
+    return numbers.reduce((total, val) =>
+        total+(Number.isNaN(Number(val))?0:Number(val)));
 }
 
 
