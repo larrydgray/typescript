@@ -9,10 +9,10 @@ let hat={
     get price(){
         return this._price;
     },
-    writeDetails: function () {
-        console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`);
+    writeDetails: () =>
+        console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`)
 
-    }
+
 };
 
 let boots = {
