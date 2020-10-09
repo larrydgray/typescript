@@ -8,6 +8,10 @@ let hat={
     },
     get price(){
         return this._price;
+    },
+    writeDetails: function () {
+        console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`);
+
     }
 };
 
@@ -19,6 +23,10 @@ let boots = {
     }
 }
 
+hat.writeDetails();
+hat.price = 120;
+hat.writeDetails();
+console.log('------');
 console.log(`Hat: ${hat.price}, ${hat.priceIncTax}`);
 hat.price=120;
 console.log(`Hat: ${hat.price}, ${hat.priceIncTax}`);
