@@ -23,4 +23,6 @@ let sumPrices=(...numbers) => numbers.reduce((total, val) =>
 let totalPrice = sumPrices(hat.price, boots.price, gloves.price);
 console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
 
-
+let propertyCheck = hat.price|| 0;
+let objectAndPropertyCheck = (hat || {}).price || 0;
+console.log(`Checks: ${propertyCheck}, ${objectAndPropertyCheck}`);
