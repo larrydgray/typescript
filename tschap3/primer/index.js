@@ -1,30 +1,15 @@
 let myObject = {
     greeting: "Hi, there",
-
-    writeMessage(message){
-        console.log(`${this.greeting}, ${message}`);
+    getWriter(){
+        return (message)=> console.log(`${this.greeting}, ${message}`)
     }
 }
 
-
-
-
-
-
-function writeMessage(message) {
-    console.log(`${this.greeting}, ${message}`);
-}
-
-myObject.writeMessage = myObject.writeMessage.bind(myObject);
-
 greeting = "Hello";
 
-myObject.writeMessage("It is sunny today");
-let myFunction = myObject.writeMessage;
-myFunction("It is sunny today!");
+let writer = myObject.getWriter();
+writer("It is raining today");
 
-
-
-writeMessage("It is sunny today");
-writeMessage.call(global,"It is Sunny Today");
-
+let standAlone = myObject.getWriter;
+let standAloneWriter = standAlone();
+standAloneWriter("It is sunny today");
