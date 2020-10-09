@@ -1,18 +1,17 @@
-let names  = ["Hat", "Boots", "Gloves"];
-let prices = [];
+let hat={
+    name: "Hat",
+    price: 100
+};
 
-prices.push(100);
-prices.push("100");
-prices.push(50.25);
-
-console.log(`First Item: ${names[0]}: ${prices[0]}`);
+let boots = {
+    name:"Boots",
+    price:"100"
+}
 
 let sumPrices=(...numbers) => numbers.reduce((total, val) =>
         total+(Number.isNaN(Number(val))?0:Number(val)));
 
-let totalPrice = sumPrices(...prices);
+let totalPrice = sumPrices(hat.price, boots.price);
 console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
 
-let combinedArray = [...names, ...prices];
-combinedArray.forEach(element=>console.log(`Combined Array Element: ${element}`));
 
