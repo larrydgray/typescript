@@ -26,3 +26,7 @@ console.log(`Total: ${totalPrice} ${typeof totalPrice}`);
 let propertyCheck = hat.price|| 0;
 let objectAndPropertyCheck = (hat || {}).price || 0;
 console.log(`Checks: ${propertyCheck}, ${objectAndPropertyCheck}`);
+
+let otherHat = { ...hat};
+console.log(`Spread: ${otherHat.name}, ${otherHat.price}`);
+
