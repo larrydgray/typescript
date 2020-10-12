@@ -1,15 +1,15 @@
-let myObject = {
-    greeting: "Hi, there",
-    getWriter(){
-        return (message)=> console.log(`${this.greeting}, ${message}`)
-    }
-}
-
-greeting = "Hello";
-
-let writer = myObject.getWriter();
-writer("It is raining today");
-
-let standAlone = myObject.getWriter;
-let standAloneWriter = standAlone();
-standAloneWriter("It is sunny today");
+let hat = {
+    name:"hat",
+    _price: 100,
+    priceIncTax: 100 *1.2,
+    set price(newPrice){
+        this._price = newPrice * 1.2;
+        this.priceIncTax = this._price * 1.2;
+    },
+    get price(){
+        return this._price;
+    },
+    writeDetails: () =>
+        console.log(`${this.name}: ${this.price}, ${this.priceIncTax}`)
+};
+hat.writeDetails();
