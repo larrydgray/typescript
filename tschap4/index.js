@@ -14,7 +14,7 @@ data.set("boots", new Product("Boots",100));
 
 [...data.keys()].forEach(key => console.log(data.get(key).toString()));
 
-
+//
 
 
 
