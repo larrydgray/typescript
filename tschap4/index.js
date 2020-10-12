@@ -7,6 +7,7 @@ class Product {
         return `toString: Name: ${this.name}, Price: ${this.price}`;
     }
 }
+
 let hat = new Product("Hat", 100);
 let boots = new Product("Boots", 100);
 
