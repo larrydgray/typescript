@@ -17,14 +17,15 @@ TaxedProduct.prototype.getPriceIncTax = function(){
     return Number(this.price) * this.taxRate;
 }
 
-TaxedProduct.prototype.toTaxString = function(){
-    return `${this.toString()}, Tax: ${this.getPriceIncTax()}`;
+TaxedProduct.prototype.toString = function(){
+    let chainResult = Product.prototype.toString.call(this);
+    return `${chainResult}, Tax: ${this.getPriceIncTax()}`;
 }
 
 let hat = new TaxedProduct("Hat", 100, 1.2);
 let boots = new Product("Boots", 100);
 
-console.log(hat.toTaxString());
+console.log(hat.toString());
 console.log(boots.toString());
 
 
