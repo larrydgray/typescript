@@ -1,14 +1,17 @@
-let Product = function(name, price){
-    this.name = name;
-    this.price = price;
+class Product {
+    constructor(name, price) {
+        this.name=name;
+        this.price=price;
+    }
+    toString(){
+        return `toString: Name: ${this.name}, Price: ${this.price}`;
+    }
 }
-Product.prototype.toString = function(){
-    return `toString: Name: ${this.name}, Price: ${this.price}`;
-}
+let hat = new Product("Hat", 100);
+let boots = new Product("Boots", 100);
 
-Product.process = (...products) =>
-    products.forEach(p => console.log(p.toString()));
-Product.process(new Product("Hat", 100, 1.2), new Product("Boots",100));
+console.log(hat.toString());
+console.log(boots.toString());
 
 
 
