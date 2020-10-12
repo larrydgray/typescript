@@ -1,5 +1,5 @@
 let hat = {
-    name:"hat",
+    name:"Hat",
     price: 100,
     getPriceIncIncTax(){
         return Number(this.price) * 1.2;
@@ -14,10 +14,10 @@ let boots = {
 }
 
 let hatPrototype = Object.getPrototypeOf(hat);
-console.log(`Hat Prototype: ${hatPrototype}`);
+hatPrototype.toString = function(){
+    return `toString: Name: ${this.name}, Price: ${this.price}`;
+}
+console.log(hat.toString());
+console.log(boots.toString());
 
-let bootsPrototype =  Object.getPrototypeOf(boots);
-console.log(`Boots Prototype: ${bootsPrototype}`);
-
-console.log(`Common prototype: ${ hatPrototype === bootsPrototype}`);
 
