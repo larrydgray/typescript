@@ -34,3 +34,4 @@ console.log(`boots and TaxedProduct: ${boots instanceof TaxedProduct}`);
 console.log(`boots and Product: ${boots instanceof Product}`);
 
 
+
