@@ -8,39 +8,15 @@ class Product {
     }
 }
 
-
-function createProductIterator() {
-    const hat = new Product("Hat", 100);
-    const boots = new Product("Boots", 100);
-    const umbrella = new Product("Umbrella", 23);
-
-    let lastVal;
-
-    return {
-        next(){
-            switch(lastVal){
-                case undefined:
-                    lastVal = hat;
-                    return { value: hat, done: false};
-                case hat:
-                    lastVal = boots;
-                    return { value: boots, done: false};
-                case boots:
-                    lastVal = umbrella;
-                    return { value: umbrella,done: false};
-                case umbrella:
-                    return {value: undefined, done: true};
-            }
-        }
-    }
+function* createProductIterator(){
+    yield new Product("Hat", 100);
+    yield new Product("Boots", 100);
+    yield new Product("Umbrella", 23);
 }
+[...createProductIterator()].forEach(p => console.log(p.toString()));
 
-let iterator = createProductIterator();
-let result = iterator.next();
-while(!result.done){
-    console.log(result.value.toString());
-    result = iterator.next();
-}
+
+
 
 
 
