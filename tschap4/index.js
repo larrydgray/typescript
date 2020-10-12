@@ -1,26 +1,14 @@
-let ProductProto = {
-    toString: function(){
-        return `toString: Name: ${this.name}, Price: ${this.price}`;
-    }
+let Product = function(name, price){
+    this.name = name;
+    this.price = price;
+}
+Product.prototype.toString = function(){
+    return `toString: Name: ${this.name}, Price: ${this.price}`;
 }
 
-let hat = {
-    name:"Hat",
-    price: 100,
-    getPriceIncIncTax(){
-        return Number(this.price) * 1.2;
-    }
-};
-let boots = {
-    name: "Boots",
-    price: 100,
-    getPriceIncIncTax(){
-        return Number(this.price) * 1.2;
-    }
-}
+let hat = new Product("Hat", 100);
+let boots = new Product("Boots", 100);
 
-Object.setPrototypeOf(hat, ProductProto);
-Object.setPrototypeOf(boots, ProductProto);
 console.log(hat.toString());
 console.log(boots.toString());
 
