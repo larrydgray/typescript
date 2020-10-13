@@ -1,5 +1,6 @@
-function printMessage(msg) {
-    console.log(`Message: ${msg}`);
-}
-printMessage("Hello, TypeScript");
-printMessage(100);
+var printMessage = function (msg) {
+    return console.log("Message: " + msg);
+};
+var message = ("Hello, TypeScript");
+printMessage(message);
+//printMessage(100);

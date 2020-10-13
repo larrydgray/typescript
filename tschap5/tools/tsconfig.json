@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
+    "target": "ES5",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "noEmitOnError": true
   }
 }

@@ -1,5 +1,5 @@
-function printMessage(msg: string): void {
+let printMessage=(msg: string): void =>
     console.log(`Message: ${msg}`);
-}
-printMessage("Hello, TypeScript");
-printMessage(100);
+let message = ("Hello, TypeScript");
+printMessage(message);
+//printMessage(100);
