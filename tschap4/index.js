@@ -1,3 +1,5 @@
+import calcTax from "./tax";
+
 class Product {
     constructor(name, price) {
         this.id= Symbol();
@@ -9,24 +11,11 @@ class Product {
     }
 }
 
-class Supplier{
-    constructor(name,productids) {
-        this.name=name;
-        this.productids = productids;
-    }
-}
 let product = new Product("Hat", 100);
+let taxedPrice = calcTax(product.price);
 
-let productArray = [];
-let productSet = new Set();
+console.log(`Name: ${product.name}, Taxed Price: ${taxedPrice}`);
 
-for(let i=0;i<5;i++){
-    productArray.push(product);
-    productSet.add(product);
-}
-
-console.log(`Array length: ${productArray.length}`);
-console.log(`Set size: ${productSet.size}`);
 
 
 
