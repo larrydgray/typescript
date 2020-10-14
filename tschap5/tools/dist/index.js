@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var calc_1 = require("./calc");
-var printMessage = function (msg) {
-    return console.log("Message: " + msg);
-};
-var message = ("Hello, TypeScript");
+const calc_1 = require("./calc");
+let printMessage = (msg) => console.log(`Message: ${msg}`);
+let message = ("Hello, TypeScript");
 printMessage(message);
-var total = calc_1.sum(100, 200, 300);
-console.log("Total: " + total);
+let total = calc_1.sum(100, 200, 300);
+console.log(`Total: ${total}`);
+//

@@ -1,10 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function sum() {
-    var vals = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        vals[_i] = arguments[_i];
-    }
-    return vals.reduce(function (total, val) { return total += val; });
+export function sum(...vals) {
+    return vals.reduce((total, val) => total += val);
 }
-exports.sum = sum;
