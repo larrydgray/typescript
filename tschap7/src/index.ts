@@ -1,16 +1,10 @@
-function calculateTax(amount):any{
-    return `$${(amount*1.2).toFixed(2)}`;
+function calculateTax(amount:number, format: boolean): string|number{
+    const calcAmount = amount * 1.2;
+    return format ? `$${(amount*1.2).toFixed(2)}`:calcAmount;
 }
-let price: number = 100;
-let taxAmount = calculateTax(price);
-let halfShare = taxAmount / 2;
+let taxNumber = calculateTax(100, false);
+let taxString = calculateTax(100, true);
 
-let personVal = calculateTax("Bob");
-
-console.log(`Price: ${price}`);
-console.log(`Full amount in tax: ${taxAmount}`);
-console.log(`Half Share: ${halfShare}`);
-console.log(`Name: ${personVal}`);
 
 
 
