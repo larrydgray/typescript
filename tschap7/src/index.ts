@@ -9,6 +9,9 @@ console.log(`Price: ${price}`);
 console.log(`Full amount in tax: ${taxAmount}`);
 console.log(`Half Share: ${halfShare}`);
 
-
+let newResult: any = calculateTax(200);
+let myNumber:number = newResult;
+console.log(`myNumber type is: ${typeof myNumber}`);
+console.log(`Number value: ${myNumber.toFixed(2)}`);
 
 
