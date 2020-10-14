@@ -1,5 +1,5 @@
 function calculateTax(amount:any):any{
-    return (amount*1.2).toFixed(2);
+    return `$${(amount*1.2).toFixed(2)}`;
 }
 let price: number = 100;
 let taxAmount = calculateTax(price);
