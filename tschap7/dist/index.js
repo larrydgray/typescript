@@ -5,7 +5,7 @@ function calculateTax(amount, format) {
     const calcAmount = amount * 1.2;
     return format ? `$${(amount * 1.2).toFixed(2)}` : calcAmount;
 }
-let taxValue = calculateTax(0, false);
+let taxValue = calculateTax(100, false);
 switch (typeof taxValue) {
     case "number":
         console.log(`Number Value: ${taxValue.toFixed(2)}`);
