@@ -13,3 +13,4 @@ let umbrellaPrice= 42;
 writePrice("Hat", calculateTax(hatPrice));
 writePrice("Gloves", calculateTax(glovesPrice));
 writePrice("Umbrella", calculateTax(umbrellaPrice));
+//
