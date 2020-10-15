@@ -15,6 +15,11 @@ var Product;
     Product[Product["Gloves"] = 20] = "Gloves";
     Product[Product["Umbrella"] = 31] = "Umbrella";
 })(Product || (Product = {}));
-let productValue = 11;
-let productName = Product[productValue];
-console.log(`Value: ${productValue}, Name: ${productName}`);
+let productValue = Product.Hat;
+if (typeof productValue === "number") {
+    console.log("Value is a number");
+}
+let unionValue = Product.Hat;
+if (typeof unionValue === "number") {
+    console.log("Value is a number");
+}

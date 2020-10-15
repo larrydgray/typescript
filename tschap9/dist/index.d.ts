@@ -10,4 +10,4 @@ declare enum Product {
     Umbrella = 31
 }
 declare let productValue: Product;
-declare let productName: string;
+declare let unionValue: number | Product;
