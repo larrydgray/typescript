@@ -5,7 +5,7 @@ function calculateTax(amount:number, format: boolean): string|number|null{
     const calcAmount = amount * 1.2;
     return format ? `$${(amount*1.2).toFixed(2)}`:calcAmount;
 }
-let taxValue:string|number |null;
+let taxValue!:string|number |null;
 eval("taxValue = calculateTax(100, false)");
 if( taxValue !== null) {
     let nonNullTaxValue: string|number = taxValue;
