@@ -5,7 +5,8 @@ function calculateTax(amount, format) {
     const calcAmount = amount * 1.2;
     return format ? `$${(amount * 1.2).toFixed(2)}` : calcAmount;
 }
-let taxValue = calculateTax(100, false);
+let taxValue;
+eval("taxValue = calculateTax(100, false)");
 if (taxValue !== null) {
     let nonNullTaxValue = taxValue;
     switch (typeof taxValue) {
