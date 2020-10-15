@@ -1,0 +1,16 @@
+{
+  "name": "tschap9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.5.1"
+  },
+  "scripts": {
+    "start": "tsc-watch --onsuccess \"node dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
