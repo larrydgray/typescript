@@ -17,7 +17,7 @@ switch(typeof taxValue){
 }
 
 let newResult: unknown = calculateTax(200,false);
-let myNumber: number = newResult;
+let myNumber: number = newResult as number;
 console.log(`Number value: ${myNumber.toFixed(2)}`);
 
 
