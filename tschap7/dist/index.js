@@ -6,20 +6,17 @@ function calculateTax(amount, format) {
     return format ? `$${(amount * 1.2).toFixed(2)}` : calcAmount;
 }
 let taxValue = calculateTax(100, false);
-switch (typeof taxValue) {
-    case "number":
-        console.log(`Number Value: ${taxValue.toFixed(2)}`);
-        break;
-    case "string":
-        console.log(`String Value: ${taxValue.charAt(0)}`);
-        break;
-    default:
-        if (taxValue === null) {
-            console.log("Value is null");
-        }
-        else {
-            console.log(typeof taxValue);
-            let value = taxValue;
-            console.log(`Unexpected type for value: ${value}`);
-        }
+if (taxValue !== null) {
+    let nonNullTaxValue = taxValue;
+    switch (typeof taxValue) {
+        case "number":
+            console.log(`Number Value: ${taxValue.toFixed(2)}`);
+            break;
+        case "string":
+            console.log(`String Value: ${taxValue.charAt(0)}`);
+            break;
+    }
+}
+else {
+    console.log("Value is not a string or a number");
 }

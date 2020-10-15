@@ -5,23 +5,21 @@ function calculateTax(amount:number, format: boolean): string|number|null{
     const calcAmount = amount * 1.2;
     return format ? `$${(amount*1.2).toFixed(2)}`:calcAmount;
 }
-let taxValue:string|number = calculateTax(100, false)!;
+let taxValue:string|number |null= calculateTax(100, false);
+if( taxValue !== null) {
+    let nonNullTaxValue: string|number = taxValue;
+    switch (typeof taxValue) {
+        case "number":
+            console.log(`Number Value: ${taxValue.toFixed(2)}`);
+            break;
+        case "string":
+            console.log(`String Value: ${taxValue.charAt(0)}`);
+            break;
 
-switch(typeof taxValue){
-    case "number":
-        console.log(`Number Value: ${taxValue.toFixed(2)}`);
-        break;
-    case "string":
-        console.log(`String Value: ${taxValue.charAt(0)}`);
-        break;
-    default:
-        if (taxValue===null){
-            console.log("Value is null");
-        }else {
-            console.log(typeof taxValue);
-            let value: never = taxValue;
-            console.log(`Unexpected type for value: ${value}`);
-        }
+    }
+
+}else {
+    console.log("Value is not a string or a number");
 }
 
 
