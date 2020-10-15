@@ -9,6 +9,6 @@ function writePrice(product: string, price:number):void {
 let prices: Array<number>= [100,75,42];
 let names: string[] = ["Hat", "Gloves", "Umbrella"];
 
-prices.forEach((price: number, index: number)=>{
+prices.forEach((price, index)=>{
     writePrice(names[index], calculateTax(price));
 });
