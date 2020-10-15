@@ -11,7 +11,15 @@ switch(typeof taxValue){
     case "string":
         console.log(`String Value: ${taxValue.charAt(0)}`);
         break;
+    default:
+        let value: never = taxValue;
+        console.log(`Unexpected type for value: ${value}`);
 }
+
+let newResult: unknown = calculateTax(200,false);
+let myNumber: number = newResult;
+console.log(`Number value: ${myNumber.toFixed(2)}`);
+
 
 
 
