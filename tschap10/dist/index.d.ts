@@ -32,4 +32,4 @@ declare let bob: {
     name: string;
     city: string;
 };
-declare let dataItems: UnionType[];
+declare let dataItems: (Person | Product)[];
