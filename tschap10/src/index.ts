@@ -26,7 +26,7 @@ let bob = {id: "bsmith", name:"Bob", city:"London"};
 let dataItems: (Person|Product)[]=[hat, gloves, umbrella, bob];
 
 dataItems.forEach(item => {
-  if("id" in item && "name" in item){
+  if("price" in item){
     console.log(`Person: ${item.name}: ${item.city}`);
   }else {
     console.log(`Product: ${item.name}: ${item.price}`);
