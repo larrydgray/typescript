@@ -1,2 +1,2 @@
-let restrictedValue = 3;
+let restrictedValue = 100;
 console.log(`Value: ${restrictedValue}`);
