@@ -3,4 +3,11 @@ let gloves = { id: 2, name: "Gloves", price: 75 };
 let umbrella = { id: 3, name: "Umbrella", price: 30 };
 let bob = { id: "bsmith", name: "Bob", city: "London" };
 let dataItems = [hat, gloves, umbrella, bob];
-dataItems.forEach(item => console.log(`ID: ${item.id}, Type: ${typeof item}`));
+dataItems.forEach(item => {
+    if ("city" in item) {
+        console.log(`Person: ${item.name}: ${item.city}`);
+    }
+    else {
+        console.log(`Product: ${item.name}: ${item.price}`);
+    }
+});
