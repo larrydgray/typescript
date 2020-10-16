@@ -22,11 +22,14 @@ let gloves  = {id: 2, name: "Gloves", price: 75};
 let umbrella = {id: 3, name: "Umbrella", price:30};
 let bob = {id: "bsmith", name:"Bob", city:"London"};
 
-
 let dataItems: (Person|Product)[]=[hat, gloves, umbrella, bob];
 
+function isPerson(testObj: any): testObj is Person{
+  return testObj.city !== undefined;
+}
+
 dataItems.forEach(item => {
-  if("price" in item){
+  if(isPerson(item)){
     console.log(`Person: ${item.name}: ${item.city}`);
   }else {
     console.log(`Product: ${item.name}: ${item.price}`);

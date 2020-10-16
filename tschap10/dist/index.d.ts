@@ -33,3 +33,4 @@ declare let bob: {
     city: string;
 };
 declare let dataItems: (Person | Product)[];
+declare function isPerson(testObj: any): testObj is Person;
