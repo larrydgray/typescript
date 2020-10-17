@@ -1,11 +1,11 @@
-class Person  {
+abstract class Person  {
     constructor(public id: string, public name: string,
                 public city:string) {
     }
-    //getDetails(): string {
-    //    return `${this.name}, ${this.getSpecficDetails()}`;
-   // }
-    //abstract getSpecificDetails(): string;
+    getDetails(): string {
+       return `${this.name}, ${this.getSpecificDetails()}`;
+    }
+    abstract getSpecificDetails(): string;
 }
 
 class Employee extends Person{
@@ -16,12 +16,21 @@ class Employee extends Person{
     writeDept(){
         console.log(`${this.name} works in ${this.dept}`);
     }
+
+    getSpecificDetails(): string {
+        return `works in ${this.dept}`;
+    }
+
 }
 
 class Customer extends Person{
     constructor(public readonly id: string, public name: string,
                 public city: string, public creditLimit: number) {
         super(id,name,city);
+    }
+
+    getSpecificDetails(): string {
+        return `has ${this.creditLimit}`;
     }
 }
 
@@ -30,16 +39,17 @@ class Supplier extends  Person{
                 public city: string, public companyName: string) {
         super(id,name,city);
     }
+
+    getSpecificDetails(): string {
+        return `works for ${this.companyName}`;
+    }
 }
 
 let data: Person[] = [new Employee("fvega", "Fidel Vega", "Sales","Paris"),
     new Customer("ajones", "Alice Jones", "London",500)];
 
 data.forEach(item => {
-    console.log(`${item.name}, ${item.city}`);
-    if(item instanceof Employee){
-        item.writeDept();
-    }
+    console.log(item.getDetails());
 });
 
 data.push( new Supplier("dpeters", "Dora Peters", "New York", "Acme"));
