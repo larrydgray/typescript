@@ -5,7 +5,7 @@ type Person = {
 };
 
 class Employee {
-    public id: string;
+    public readonly id: string;
     public name: string;
     private dept: string;
     public city: string;
@@ -23,7 +23,7 @@ class Employee {
 let salesEmployee = new Employee("fvega", "Fidel Vego", "Sales", "Paris");
 
 salesEmployee.writeDept();
-
+salesEmployee.id="fidel";
 
 /*
 let data: (Person | Employee)[] =
