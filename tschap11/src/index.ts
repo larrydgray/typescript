@@ -22,7 +22,7 @@ class Employee {
 
 let salesEmployee = new Employee("fvega", "Fidel Vego", "Sales", "Paris");
 
-console.log(`Dept value: ${salesEmployee.dept}`);
+salesEmployee.writeDept();
 
 
 /*
