@@ -1,4 +1,4 @@
-interface Person{
+type Person{
     name:string;
     getDetails(): string;
 }
@@ -29,6 +29,7 @@ class Customer implements DogOwner{
         return `${this.name} has a dog named ${this.dogName}`;
     }
 }
+
 let alice = new Customer("ajones", "Alice Jones", "London",500, "Fido");
 
 let dogOwners: DogOwner[] = [alice];
