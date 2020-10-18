@@ -1,34 +1,21 @@
-declare type Person = {
+interface Person {
     name: string;
     getDetails(): string;
-    dogName?: string;
-    getDogDetails?(): any;
-};
-interface DogOwner extends Person {
-    dogName: string;
-    getDogDetails(): string;
 }
-declare abstract class AbstractDogOwner implements Person {
-    abstract name: string;
-    abstract dogName?: string;
-    abstract getDetails(): any;
-    getDogDetails(): string;
+interface Product {
+    name: string;
+    price: number;
 }
 declare class Employee implements Person {
-    readonly id: string;
     name: string;
-    private dept;
-    city: string;
-    constructor(id: string, name: string, dept: string, city: string);
+    company: string;
+    constructor(name: string, company: string);
     getDetails(): string;
 }
-declare class DogOwningCustomer extends AbstractDogOwner {
-    readonly id: string;
+declare class SportsProduct implements Product {
     name: string;
-    city: string;
-    creditLimit: number;
-    dogName: any;
-    constructor(id: string, name: string, city: string, creditLimit: number, dogName: any);
-    getDetails(): string;
+    category: string;
+    price: number;
+    constructor(name: string, category: string, price: number);
 }
-declare let alice: DogOwningCustomer;
+declare let data: (Person | Product)[];

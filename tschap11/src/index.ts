@@ -1,60 +1,40 @@
-type Person={
+interface Person{
     name:string;
     getDetails(): string;
-    dogName?:string;
-    getDogDetails?();
+
 }
 
-interface DogOwner extends Person{
-    dogName: string;
-    getDogDetails(): string;
-}
-
-abstract  class AbstractDogOwner implements Person {
-    abstract name: string;
-    abstract dogName?: string;
-
-    abstract getDetails();
-
-    getDogDetails(){
-        if(this.dogName){
-            return `${this.name} has a dog called ${this.dogName}`;
-        }
-    }
+interface Product{
+    name: string;
+    price: number;
 }
 
 class Employee implements Person{
-    constructor(public readonly  id: string, public name:  string,
-                private dept: string, public city:string) {
-    }
-    getDetails(){
-        return `${this.name} works in ${this.dept}`;
-    }
-}
+    constructor(public name: string, public company: string) {
 
-class DogOwningCustomer extends AbstractDogOwner{
-    constructor(public readonly id: string, public name: string,
-                public city: string, public creditLimit: number,public dogName) {
-        super();
-    }
-    getDetails(){
-        return `${this.name} has ${this.creditLimit} limit`;
     }
 
+    getDetails(): string {
+        return `${this.name} works for ${this.company}`;
+    }
 
 }
 
-let alice = new DogOwningCustomer("ajones", "Alice Jones", "London",500, "Fido");
-if(alice.getDogDetails){
-    console.log(alice.getDogDetails());
+class SportsProduct implements Product {
+    constructor(public name: string, public category: string,
+                public price: number) {
+
+    }
 }
 
-//let data: Person[] = [new Employee("fvega", "Fidel Vega", "Sales","Paris"), alice]
+let data: (Person | Product)[] = [new Employee("Bob Smith", "Acme"),
+    new SportsProduct("Running Shoes", "Running",90.50),
+    new Employee("Dora Peters", "BigCo")];
 
-/*
-data.forEach(item =>{
-        console.log(item.getDetails());
-        if (item.getDogDetails){
-            console.log(item.getDogDetails());
-        }
-});*/
+data.forEach(item=>{
+    if("getDetails" in item){
+        console.log(`Person: ${item.getDetails()}`);
+    } else {
+        console.log(`Product: ${item.name}, ${item.price}`);
+    }
+});
