@@ -1,4 +1,4 @@
-type Person{
+type Person={
     name:string;
     getDetails(): string;
 }
