@@ -13,31 +13,14 @@ class DataCollection {
         this.items = [];
         this.items.push(...initialItems);
     }
-    collate(targetData, itemProp, targetProp) {
-        let results = [];
-        this.items.forEach(item => {
-            let match = targetData.find(d => d[targetProp] === item[itemProp]);
-            if (match !== undefined) {
-                results.push({ ...match, ...item });
-            }
-        });
-        return results;
+    filter(predicate) {
+        return this.items.filter(item => predicate(item));
     }
+    ;
 }
-class SearchableCollection extends DataCollection {
-    constructor(initialItems) {
-        super(initialItems);
-    }
-    find(searchTerm) {
-        return this.items.filter(item => {
-            if (item instanceof dataTypes_1.Employee) {
-                return item.name === searchTerm || item.role === searchTerm;
-            }
-            else if (item instanceof dataTypes_1.Person) {
-                return item.name === searchTerm || item.city === searchTerm;
-            }
-        });
-    }
+let mixedData = new DataCollection([...people, ...products]);
+function isProduct(target) {
+    return target instanceof dataTypes_1.Product;
 }
-let employeeData = new SearchableCollection(employees);
-employeeData.find("Sales").forEach(e => console.log(`Employee ${e.name}, ${e.role}`));
+let filteredProducts = mixedData.filter(isProduct);
+filteredProducts.forEach(p => console.log(`Product ${p.name}, ${p.price}`));
