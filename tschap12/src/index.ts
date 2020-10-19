@@ -28,9 +28,9 @@ class DataCollection<T> {
 }
 
 let peopleData = new DataCollection(people);
-
-//console.log(`Names: ${peopleData.getNames().join(", ")}`);
 let firstPerson = peopleData.getItem(0);
-//if(firstPerson instanceof Person){
-        console.log(`First Person: ${firstPerson.name}, ${firstPerson.city}`);
-//}
+console.log(`First Person: ${firstPerson.name}, ${firstPerson.city}`);
+
+let productData= new DataCollection<Product>(products);
+let firstProduct = productData.getItem(0);
+console.log(`First Product: ${firstProduct.name}, ${firstProduct.price}`);
