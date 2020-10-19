@@ -20,6 +20,7 @@ class Collection<T extends shapeType>{
         get count(): number {
                 return this.items.size;
         }
+
 }
 let productCollection: Collection<Product> = new Collection(products);
 console.log(`There are ${productCollection.count} products`);
