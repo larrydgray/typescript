@@ -9,7 +9,7 @@ let employees = [new Employee("Bob Smith", "Sales"),
 
 //type dataType = Person | Product;
 
-class DataCollection <T extends {name: string}, U> {
+class DataCollection <T extends {name: string}> {
 
         private items: T[] = [];
 
@@ -28,10 +28,15 @@ class DataCollection <T extends {name: string}, U> {
         }
 }
 
-let peopleData = new DataCollection<Person, City>(people);
-let collatedData = peopleData.collate<City>(cities, "city", "name");
+//class SearchableCollection<T extends { name: string}> extends DataCollection<T>{
+
+//}
+
+export let peopleData = new DataCollection(people);
+export let collatedData = peopleData.collate(cities, "city", "name");
 collatedData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.population}`));
-let empData = peopleData.collate<Employee>(employees, "name","name");
+export let empData = peopleData.collate(employees, "name","name");
 empData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.role}`));
+
 
 

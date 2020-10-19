@@ -24,8 +24,10 @@ class DataCollection {
         return results;
     }
 }
-let peopleData = new DataCollection(people);
-let collatedData = peopleData.collate(cities, "city", "name");
-collatedData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.population}`));
-let empData = peopleData.collate(employees, "name", "name");
-empData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.role}`));
+//class SearchableCollection<T extends { name: string}> extends DataCollection<T>{
+//}
+exports.peopleData = new DataCollection(people);
+exports.collatedData = exports.peopleData.collate(cities, "city", "name");
+exports.collatedData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.population}`));
+exports.empData = exports.peopleData.collate(employees, "name", "name");
+exports.empData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.role}`));
