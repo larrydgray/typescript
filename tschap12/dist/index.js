@@ -24,10 +24,16 @@ class DataCollection {
         return results;
     }
 }
-//class SearchableCollection<T extends { name: string}> extends DataCollection<T>{
-//}
-exports.peopleData = new DataCollection(people);
-exports.collatedData = exports.peopleData.collate(cities, "city", "name");
-exports.collatedData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.population}`));
-exports.empData = exports.peopleData.collate(employees, "name", "name");
-exports.empData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.role}`));
+class SearchableCollection extends DataCollection {
+    constructor(initialItems) {
+        super(initialItems);
+    }
+    find(name) {
+        return this.items.find(item => item.name === name);
+    }
+}
+let peopleData = new SearchableCollection(people);
+let foundPerson = peopleData.find("Dora Peters");
+if (foundPerson !== undefined) {
+    console.log(`Person ${foundPerson.name}, ${foundPerson.city}`);
+}
