@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dataTypes_1 = require("./dataTypes");
-class ArrayCollection {
+class PersonCollection {
     constructor() {
         this.items = [];
     }
@@ -15,6 +15,6 @@ class ArrayCollection {
         return this.items.length;
     }
 }
-let peopleCollection = new ArrayCollection();
+let peopleCollection = new PersonCollection();
 peopleCollection.add(new dataTypes_1.Person("Bob Smith", "London"), new dataTypes_1.Person("Dora Peters", "New York"));
 console.log(`Collection size: ${peopleCollection.count}`);
