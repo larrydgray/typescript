@@ -5,6 +5,8 @@ let people = [new dataTypes_1.Person("Bob Smith", "London"),
     new dataTypes_1.Person("Dora Peters", "New York")];
 let products = [new dataTypes_1.Product("Running Shoes", 100), new dataTypes_1.Product("Hat", 25)];
 let cities = [new dataTypes_1.City("London", 8136000), new dataTypes_1.City("Paris", 2141000)];
+let employees = [new dataTypes_1.Employee("Bob Smith", "Sales"),
+    new dataTypes_1.Employee("Alice Jones", "Sales")];
 //type dataType = Person | Product;
 class DataCollection {
     constructor(initialItems) {
@@ -25,3 +27,5 @@ class DataCollection {
 let peopleData = new DataCollection(people);
 let collatedData = peopleData.collate(cities, "city", "name");
 collatedData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.population}`));
+let empData = peopleData.collate(employees, "name", "name");
+empData.forEach(c => console.log(`${c.name}, ${c.city}, ${c.role}`));
