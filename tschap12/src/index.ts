@@ -13,26 +13,15 @@ class DataCollection <T extends {name: string}, U> {
         constructor(initialItems: T[]) {
                 this.items.push(...initialItems);
         }
-        collate(targetData: U[], itemProp: string, targetProp: string): (T & U)[]{
+        collate(targetData: U[], itemProp: string, targetProp: string): (T & U)[] {
                 let results = [];
-                this.items.forEach(item =>{
-                        let match = targetData.find(d => d[targetProp]=== item[itemProp]);
-                        if(match !== undefined){
-                                results.push({ ...match, ...item});
+                this.items.forEach(item => {
+                        let match = targetData.find(d => d[targetProp] === item[itemProp]);
+                        if (match !== undefined) {
+                                results.push({...match, ...item});
                         }
                 });
                 return results;
-        }
-        add(newItem: T) {
-                this.items.push(newItem);
-        }
-
-        getNames(): string[]{
-                return this.items.map(item => item.name);
-        }
-
-        getItem(index:number): T {
-                return this.items[index];
         }
 }
 
