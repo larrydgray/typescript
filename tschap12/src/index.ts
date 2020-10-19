@@ -29,19 +29,17 @@ class DataCollection <T extends {name: string}> {
 }
 
 
-class SearchableCollection<T extends { name: string}> extends DataCollection<T>{
-        constructor(initialItems: T[]) {
+class SearchableCollection extends DataCollection<Employee>{
+        constructor(initialItems: Employee[]) {
                 super(initialItems);
         }
-        find(name:string): T| undefined{
-                return this.items.find(item => item.name === name);
+        find(searchTerm:string): Employee[]{
+                return this.items.filter(item =>
+                item.name === searchTerm|| item.role===searchTerm);
         }
 }
 
-let peopleData = new SearchableCollection<Person>(people);
-let foundPerson = peopleData.find("Dora Peters");
-if(foundPerson!==undefined){
-        console.log(`Person ${foundPerson.name}, ${ foundPerson.city}`);
-}
+let employeeData = new SearchableCollection(employees);
+employeeData.find("Sales").forEach(e => console.log(`Employee ${e.name}, ${e.role}`));
 
 
