@@ -1,23 +1,13 @@
 import { City, Person, Product, Employee} from "./dataTypes";
 
-/*
-type MakeOptional<T>={
-        [P in keyof T]? : T[P]
-};
-type MakeRequired<T> = {
-        [P in keyof T]-? : T[P]
-};
-type MakeReadOnly<T> = {
-        readonly [P in keyof T] : T[P]
-};*/
-type MakeReadWrite<T> = {
-        -readonly [P in keyof T] : T[P]
+type SelectProperties<T, K extends keyof T>={
+        [P in K]: T[P]
 };
 
-type optionalType = Partial<Product>;
-type requiredType = Required<optionalType>;
-type readOnlyType = Readonly<requiredType>;
-type readWriteType = MakeReadWrite<readOnlyType>;
+let p1: SelectProperties<Product, "name">={name: "Kayak"};
+let p2: Pick<Product, "name"| "price"> = {name: "Lifejacket", price: 48.95};
 
-let p: readWriteType = {name: "Kayak", price: 275};
-console.log(`Mapped type: ${p.name}, ${p.price}`);
+console.log(`Custom mapped type: ${p1.name}`);
+console.log(`Mapped type: ${p2.name}, ${p2.price}`);
+
+
