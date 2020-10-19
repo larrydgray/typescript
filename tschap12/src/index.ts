@@ -25,19 +25,13 @@ class ProductCollection extends ArrayCollection<Product>{
                 return this.items.find(item => item.name === name);
         }
 }
-class PersonCollection implements Collection<Person>{
-        private items: Person[] = [];
+class PersonCollection extends ArrayCollection<Person>{
 
-        add(...newItems): void {
-                this.items.push(...newItems);
-        }
 
-        get(name: string): Person {
-                return this.items.find(item => item.name === name);
-        }
 
-        get count():number {
-                return this.items.length;
+
+        get(searchTerm:string): Person {
+                return this.items.find(item => item.name === name|| item.city === name);
         }
 }
 

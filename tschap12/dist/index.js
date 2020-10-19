@@ -20,18 +20,9 @@ class ProductCollection extends ArrayCollection {
         return this.items.find(item => item.name === name);
     }
 }
-class PersonCollection {
-    constructor() {
-        this.items = [];
-    }
-    add(...newItems) {
-        this.items.push(...newItems);
-    }
-    get(name) {
-        return this.items.find(item => item.name === name);
-    }
-    get count() {
-        return this.items.length;
+class PersonCollection extends ArrayCollection {
+    get(searchTerm) {
+        return this.items.find(item => item.name === name || item.city === name);
     }
 }
 let peopleCollection = new PersonCollection();
