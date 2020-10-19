@@ -10,6 +10,6 @@ let p1: CustomMapped<Product, "name">={name: "Kayak"};
 let p2: BuiltInMapped<Product, "name"| "price"> = {name: "Lifejacket", price: 48.95};
 
 console.log(`Custom mapped type: ${p1.name}`);
-console.log(`Mapped type: ${p2.name}, ${p2.price}`);
+console.log(`Build in mapped type: ${p2.name}, ${p2.price}`);
 
 
