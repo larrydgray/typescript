@@ -21,15 +21,6 @@ class DataCollection {
         });
         return results;
     }
-    add(newItem) {
-        this.items.push(newItem);
-    }
-    getNames() {
-        return this.items.map(item => item.name);
-    }
-    getItem(index) {
-        return this.items[index];
-    }
 }
 let peopleData = new DataCollection(people);
 let collatedData = peopleData.collate(cities, "city", "name");
