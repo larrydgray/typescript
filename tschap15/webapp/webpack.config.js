@@ -7,5 +7,9 @@ module.exports = {
         rules: [
             { test: /\.ts/, use: "ts-loader", exclude: /node_modules/ }
         ]
+    },
+    devServer: {
+        contentBase: "./assets",
+        port: 4500
     }
 };
