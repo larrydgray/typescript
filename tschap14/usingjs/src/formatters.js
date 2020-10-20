@@ -10,11 +10,11 @@ export function sizeFormatter(thing, count) {
  * @param { number | string } cost - the value associated with the item
  */
 export function costFormatter(thing, cost) {
-   // if (typeof cost === "number") {
+   if (typeof cost === "number") {
         writeMessage(`The ${thing} costs $${cost.toFixed(2)}`, true);
-    //} else {
-   //     writeMessage(`The ${thing} costs $${cost}`);
-   // }
+    } else {
+        writeMessage(`The ${thing} costs $${cost}`);
+    }
 }
 
 export function writeMessage(message) {
