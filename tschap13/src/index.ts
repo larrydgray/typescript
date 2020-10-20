@@ -1,16 +1,15 @@
 import { City, Person, Product, Employee} from "./dataTypes";
 
-type unionOfTypeNames<T, U> = {
-        [P in keyof T]:T[P] extends U ? P : never;
+function getValue<T, P extends keyof T>(data: T, propName: P): T[P]{
+        if (Array.isArray(data)){
+                return data[0][propName];
+        } else{
+                return data[propName];
+        }
 }
 
-type propertiesOfType<T, U> = unionOfTypeNames<T, U>[keyof T];
-
-function total<T, P extends propertiesOfType<T, number>>(data: T[],
-                                                         propName:P):number{
-        return data.reduce((t,item) => t += Number(item[propName]),0);
-}
 let products = [new Product("Kayak", 275), new Product("Lifejacket", 48.95)];
-console.log(`Total: ${total(products, "price")}`);
+console.log(`Array Value: ${getValue(products, "price")}`);
+console.log(`Single Total: ${getValue(products[0], "price")}`);
 
 
