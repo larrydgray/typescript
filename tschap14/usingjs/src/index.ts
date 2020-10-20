@@ -17,7 +17,7 @@ sizeFormatter("Cart", cart.itemCount);
 costFormatter("Cart", `${cart.totalPrice}`);
 
 console.log(chalk.greenBright("Formatted Message"));
-console.log(chalk.notAColor("Formatted message"));
+//console.log(chalk.notAColor("Formatted message"));
 //writeMessage("Test Message");
 //console.log(`Cart has ${cart.itemCount} items`);
 //console.log(`Cart value is $${cart.totalPrice.toFixed(2)}`);
