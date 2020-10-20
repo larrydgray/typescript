@@ -15,9 +15,10 @@ cart.addProduct(hat, 2);
 sizeFormatter("Cart", cart.itemCount);
 costFormatter("Cart", `${cart.totalPrice}`);
 
-let db = debug("ExampleApp", true);
+let db = debug("ExampleApp");
 db.enabled = true;
 db("Message:%0", "Test message");
+db.destroy();
 //writeMessage("Test Message");
 //console.log(`Cart has ${cart.itemCount} items`);
 //console.log(`Cart value is $${cart.totalPrice.toFixed(2)}`);
