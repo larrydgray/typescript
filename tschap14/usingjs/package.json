@@ -12,5 +12,8 @@
   "devDependencies": {
     "tsc-watch": "^2.1.2",
     "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "debug": "^4.1.1"
   }
 }
