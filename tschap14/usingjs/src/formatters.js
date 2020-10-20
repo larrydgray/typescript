@@ -11,7 +11,7 @@ export function sizeFormatter(thing, count) {
  */
 export function costFormatter(thing, cost) {
    if (typeof cost === "number") {
-        writeMessage(`The ${thing} costs $${cost.toFixed(2)}`, true);
+        writeMessage(`The ${thing} costs $${cost.toFixed(2)}`,true);
     } else {
         writeMessage(`The ${thing} costs $${cost}`);
     }
