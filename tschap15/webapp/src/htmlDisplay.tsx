@@ -1,7 +1,7 @@
 import { createElement } from "./tools/jsxFactory";
 import { Product, Order } from "./data/entities";
 //import { AbstractDataSource } from "./data/abstractDataSource";
-//import { ProductList } from "./productList.ts.rem";
+//import { ProductList } from "./productList.tsx";
 
 export class HtmlDisplay {
     props: {
