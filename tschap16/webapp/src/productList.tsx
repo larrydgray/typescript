@@ -12,6 +12,7 @@ export class ProductList {
         addToOrderCallback?: (product: Product, quantity: number) => void,
         filterCallback?: (category: string) => void;
     }
+
     @addClass("select", "big-info", "m-1")
     getContent(): HTMLElement {
         return <div className="container-fluid">
