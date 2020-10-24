@@ -1,4 +1,4 @@
-//import "reflect-metadata";
+import "reflect-metadata";
 
 export const minimumValue = (propName: string, min: number) =>
     (constructor: any, methodName: string, descriptor: PropertyDescriptor): any => {
@@ -9,7 +9,7 @@ export const minimumValue = (propName: string, min: number) =>
                     ? min : r[propName] }));
         }
     }
-/*
+
 export const addClass = (selector: string, ...classNames: string[]) =>
     (constructor: any, methodName: string, descriptor: PropertyDescriptor): any => {
         if (Reflect.getMetadata("design:returntype",
@@ -22,4 +22,4 @@ export const addClass = (selector: string, ...classNames: string[]) =>
                 return content;
             }
         }
-    }*/
+    }
