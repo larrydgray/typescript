@@ -1,13 +1,14 @@
-import { LocalDataSource } from "./data/localDataSource";
+//import { LocalDataSource } from "./data/localDataSource";
+import { RemoteDataSource} from "./data/remoteDataSource";
 //import { DomDisplay} from "./domDisplay"
 import { HtmlDisplay } from "./htmlDisplay";
 import "bootstrap/dist/css/bootstrap.css";
 
-let ds = new LocalDataSource();
+let ds = new RemoteDataSource();
+//let ds = new LocalDataSource();
+function displayData(): Promise<HTMLElement> {
 
-async function displayData(): Promise<HTMLElement> {
     let display = new HtmlDisplay();
-
     display.props = {
         dataSource: ds
     }
@@ -21,6 +22,6 @@ document.onreadystatechange = () => {
             let rootElement = document.getElementById("app");
             rootElement.innerHTML = "";
             rootElement.appendChild(elem);
-        })
+        });
     }
-}
+};
