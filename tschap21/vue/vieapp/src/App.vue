@@ -1,29 +1,25 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <ProductList />
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-
-@Component({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+  import { Component, Prop, Vue } from "vue-property-decorator";
+  import ProductList from "./views/ProductList.vue";
+  import { HttpHandler } from "./data/httpHandler";
+  import { action } from './data/storeDecorators';
+  import { Product } from './data/entities';
+  @Component({
+    components: {
+      ProductList
+    }
+  })
+  export default class App extends Vue {
+    private handler = new HttpHandler();
+    constructor() {
+      super();
+      this.loadProducts(this.handler.loadProducts);
+    }
+    @action()
+    loadProducts(task: () => Promise<Product[]>) {}
+  }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
